@@ -15,6 +15,9 @@ import {
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NbSecurityModule } from '@nebular/security';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { OneColumnLayoutComponent } from './layout/one-column/one-column.component';
 
 // import {
 //   FooterComponent,
@@ -54,11 +57,11 @@ const NB_MODULES = [
   NbEvaIconsModule,
 ];
 const COMPONENTS = [
-  // HeaderComponent,
-  // FooterComponent,
+  HeaderComponent,
+  FooterComponent,
   // SearchInputComponent,
   // TinyMCEComponent,
-  // OneColumnLayoutComponent,
+  OneColumnLayoutComponent,
   // ThreeColumnsLayoutComponent,
   // TwoColumnsLayoutComponent,
 ];
@@ -73,7 +76,7 @@ const PIPES = [
 @NgModule({
   imports: [CommonModule, ...NB_MODULES],
   exports: [CommonModule, ...PIPES, ...COMPONENTS],
-  declarations: [...COMPONENTS, ...PIPES],
+  declarations: [...COMPONENTS, ...PIPES, HeaderComponent, FooterComponent],
 })
 export class ThemeModule {
   static forRoot(): ModuleWithProviders {
